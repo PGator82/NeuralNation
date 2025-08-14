@@ -1,0 +1,17 @@
+{
+  "name": "neural-nubia-nodes",
+  "version": "0.4.0",
+  "private": true,
+  "scripts": {
+    "build": "hardhat compile",
+    "verify": "hardhat run scripts/verify.ts --network amoy"
+  },
+  "devDependencies": {
+    "hardhat": "^2.22.5",
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@openzeppelin/contracts": "^5.0.2",
+    "typescript": "^5.3.3",
+    "ts-node": "^10.9.2",
+    "dotenv": "^16.4.1"
+  }
+}
