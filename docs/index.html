@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -5,35 +6,39 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>NNN — From the Block to the Blockchain</title>
 <meta name="description" content="Neural Nation Network (NNN) · Raspberry Pi nodes + Polygon · Powered by Mindstrong Universe (501c3)">
+
+<!-- SEO & Social -->
+<link rel="icon" href="./favicon.ico">
+<meta name="theme-color" content="#0b0f19">
+<meta property="og:title" content="NNN — From the Block to the Blockchain">
+<meta property="og:description" content="Community tech: Raspberry Pi + Polygon. Powered by Mindstrong Universe (501c3).">
+<meta property="og:image" content="https://pgator82.github.io/NeuralNation/images/nnn-street-hero.png">
+<meta property="og:url" content="https://pgator82.github.io/NeuralNation/">
+<meta name="twitter:card" content="summary_large_image">
+
 <style>
   :root{--bg:#0b0f19;--card:#0f172a;--line:#1f2a44;--ink:#e6edf3;--sub:#94a3b8;--glow:#22d3ee;--brand:#7c3aed}
   *{box-sizing:border-box;scroll-behavior:smooth}
   body{margin:0;font-family:system-ui,Arial,sans-serif;background:var(--bg);color:var(--ink)}
-  a{color:var(--glow);text-decoration:none}
-  a:hover{text-decoration:underline}
+  a{color:var(--glow);text-decoration:none} a:hover{text-decoration:underline}
   .wrap{max-width:1200px;margin:0 auto;padding:0 16px}
- /* Glass header */
-header{
-  position:sticky; top:0; z-index:10;
-  background:linear-gradient(180deg, rgba(11,15,25,0.75) 70%, rgba(11,15,25,0));
-  border-bottom:1px solid var(--line);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  transition: background .35s ease, box-shadow .35s ease, border-color .35s ease;
-}
-
-/* When scrolled, deepen the glass + add glow shadow */
-header.scrolled{
-  background: rgba(11,15,25,0.92);
-  border-bottom-color: rgba(124,58,237,.35);
-  box-shadow: 0 6px 24px rgba(0,0,0,.35),
-              0 0 28px rgba(34,211,238,.15),
-              0 0 12px rgba(124,58,237,.15);
-}
-
-/* Optional: slightly tighten nav spacing on scroll for a compact feel */
-header.scrolled .nav{ padding: 10px 0; }
-  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+  /* Glass header */
+  header{
+    position:sticky; top:0; z-index:10;
+    background:linear-gradient(180deg, rgba(11,15,25,0.75) 70%, rgba(11,15,25,0));
+    border-bottom:1px solid var(--line);
+    backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+    transition: background .35s ease, box-shadow .35s ease, border-color .35s ease;
+  }
+  header.scrolled{
+    background: rgba(11,15,25,0.92);
+    border-bottom-color: rgba(124,58,237,.35);
+    box-shadow: 0 6px 24px rgba(0,0,0,.35),
+                0 0 28px rgba(34,211,238,.15),
+                0 0 12px rgba(124,58,237,.15);
+  }
+  header .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+  header.scrolled .nav{padding:10px 0}
   .brand{display:flex;gap:10px;align-items:center}
   .logo{width:36px;height:36px;border-radius:10px;background:
     radial-gradient(60% 60% at 40% 40%,var(--glow),transparent 60%),
@@ -63,6 +68,8 @@ header.scrolled .nav{ padding: 10px 0; }
   .reveal.show{opacity:1;transform:none}
   /* CTA row */
   .cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+  /* Simple input style */
+  .input{padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:#0f172a;color:#e6edf3;outline:none}
 </style>
 </head>
 <body>
@@ -77,6 +84,7 @@ header.scrolled .nav{ padding: 10px 0; }
       <a href="#flow">Flow</a>
       <a href="#flyers">Flyers</a>
       <a href="#ecosystem">Ecosystem</a>
+      <a href="https://github.com/PGator82/NeuralNation" target="_blank" class="btn row">GitHub</a>
     </nav>
   </div>
 </header>
@@ -87,10 +95,18 @@ header.scrolled .nav{ padding: 10px 0; }
     <span class="tag">From the Block to the Blockchain — Mindstrong Universe 501(c)(3)</span>
     <h2 class="neon">Own your block. Upgrade your future.</h2>
     <div class="card reveal">
-      <img src="./images/nnn-street-hero.png" alt="Urban community hero visual for NNN">
+      <picture>
+        <source srcset="./images/nnn-street-hero.webp" type="image/webp">
+        <img src="./images/nnn-street-hero.png" loading="lazy" width="1200" height="675" alt="Urban community hero visual for NNN">
+      </picture>
       <div class="cta">
         <a class="btn primary" id="join" href="https://forms.gle/your-google-form-id" target="_blank">Join the Network</a>
         <a class="btn" href="./NNN_Citizen_Setup_Guide.pdf" target="_blank">Download Setup PDF</a>
+        <!-- Email capture to Google Form (replace FORM_ID and FIELD_ID) -->
+        <form action="https://docs.google.com/forms/d/e/FORM_ID/formResponse" method="POST" target="_blank" class="cta" onsubmit="this.querySelector('button').innerText='Thanks!'">
+          <input class="input" name="entry.FIELD_ID" type="email" placeholder="you@email.com" required>
+          <button class="btn" type="submit">Get Updates</button>
+        </form>
       </div>
     </div>
   </section>
@@ -99,7 +115,7 @@ header.scrolled .nav{ padding: 10px 0; }
   <section id="flow">
     <h3 class="neon">How it moves: Block → Pi → Polygon → Wallet → Rewards</h3>
     <div class="card reveal">
-      <img src="./images/blockchain-flow.png" alt="NNN flow diagram">
+      <img src="./images/blockchain-flow.png" loading="lazy" width="1200" height="675" alt="NNN flow diagram">
     </div>
   </section>
 
@@ -108,14 +124,14 @@ header.scrolled .nav{ padding: 10px 0; }
     <div class="grid two">
       <div class="card reveal">
         <h3 class="neon">Citizen Setup Guide</h3>
-        <img src="./images/citizen-guide.png" alt="NNN Citizen Setup Guide">
+        <img src="./images/citizen-guide.png" loading="lazy" width="1000" height="1414" alt="NNN Citizen Setup Guide">
         <div class="cta">
           <a class="btn" href="./NNN_Citizen_Setup_Guide.pdf" target="_blank">Download PDF</a>
         </div>
       </div>
       <div class="card reveal">
         <h3 class="neon">Step Into the NNN</h3>
-        <img src="./images/nnn-setup-flyer.png" alt="Alternate setup flyer">
+        <img src="./images/nnn-setup-flyer.png" loading="lazy" width="1000" height="1414" alt="Alternate setup flyer">
         <div class="cta">
           <a class="btn primary" href="https://forms.gle/your-google-form-id" target="_blank">Sign Up</a>
         </div>
@@ -127,7 +143,7 @@ header.scrolled .nav{ padding: 10px 0; }
   <section id="ecosystem">
     <h3 class="neon">Mindstrong × NNN (501(c)(3) Ecosystem)</h3>
     <div class="card reveal">
-      <img src="./images/ecosystem-visual.png" alt="Mindstrong Universe nonprofit ecosystem with NNN">
+      <img src="./images/ecosystem-visual.png" loading="lazy" width="1200" height="675" alt="Mindstrong Universe nonprofit ecosystem with NNN">
     </div>
   </section>
 </main>
@@ -143,38 +159,25 @@ header.scrolled .nav{ padding: 10px 0; }
 
   // Nav highlight
   const sections = document.querySelectorAll("section");
-  const navLinks = document.querySelectorAll("nav a");
-  window.addEventListener("scroll", () => {
+  const navLinks = document.querySelectorAll("nav a[href^='#']");
+  function highlight(){
     let current = "";
+    const top = window.scrollY;
     sections.forEach(sec => {
-      const top = window.scrollY;
       const offset = sec.offsetTop - 100;
       const height = sec.offsetHeight;
-      if (top >= offset && top < offset + height) {
-        current = sec.getAttribute("id");
-      }
+      if (top >= offset && top < offset + height) current = sec.id;
     });
     navLinks.forEach(a => {
-      a.classList.remove("active");
-      if (a.getAttribute("href") === `#${current}`) {
-        a.classList.add("active");
-      }
+      a.classList.toggle("active", a.getAttribute("href") === `#${current}`);
     });
-  });
-</script>
+  }
+  window.addEventListener("scroll", highlight); highlight();
 
-  <script>
   // Glass header scroll state
   const hdr = document.querySelector('header');
-  const setHeaderState = () => {
-    if (window.scrollY > 40) hdr.classList.add('scrolled');
-    else hdr.classList.remove('scrolled');
-  };
-  setHeaderState();
-  window.addEventListener('scroll', setHeaderState);
+  const setHeaderState = () => { if (window.scrollY > 40) hdr.classList.add('scrolled'); else hdr.classList.remove('scrolled'); };
+  setHeaderState(); window.addEventListener('scroll', setHeaderState);
 </script>
-
 </body>
 </html>
-
-
