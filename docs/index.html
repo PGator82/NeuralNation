@@ -162,6 +162,18 @@ header.scrolled .nav{ padding: 10px 0; }
     });
   });
 </script>
+
+  <script>
+  // Glass header scroll state
+  const hdr = document.querySelector('header');
+  const setHeaderState = () => {
+    if (window.scrollY > 40) hdr.classList.add('scrolled');
+    else hdr.classList.remove('scrolled');
+  };
+  setHeaderState();
+  window.addEventListener('scroll', setHeaderState);
+</script>
+
 </body>
 </html>
 
