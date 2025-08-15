@@ -116,6 +116,32 @@
     <h3 class="neon">How it moves: Block → Pi → Polygon → Wallet → Rewards</h3>
     <div class="card reveal">
       <img src="./images/blockchain-flow.png" loading="lazy" width="1200" height="675" alt="NNN flow diagram">
+      <!-- ACTIVE NODES -->
+<div id="node-status" class="card reveal" style="margin-top:16px;">
+  <h3 class="neon">Active Nodes</h3>
+  <ul id="nodes" style="color:var(--sub);margin:8px 0 0;padding-left:18px"></ul>
+</div>
+
+<script>
+  // Load and render nodes list
+  fetch('./nodes.json')
+    .then(r => r.json())
+    .then(list => {
+      const ul = document.getElementById('nodes');
+      ul.innerHTML = '';
+      list.forEach(n => {
+        const li = document.createElement('li');
+        const statusDot = n.status === 'online' ? '🟢' : '🔴';
+        li.textContent = `${statusDot} ${n.name} — ${n.status}`;
+        ul.appendChild(li);
+      });
+    })
+    .catch(() => {
+      const ul = document.getElementById('nodes');
+      ul.innerHTML = '<li>Could not load node status right now.</li>';
+    });
+</script>
+
     </div>
   </section>
 
