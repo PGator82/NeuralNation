@@ -25,7 +25,16 @@
   .grid{display:grid;gap:16px}
   @media(min-width:900px){.grid.two{grid-template-columns:1fr 1fr}}
   .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;box-shadow:0 0 0 1px rgba(124,58,237,.06),0 10px 30px rgba(0,0,0,.25)}
-  img{width:100%;height:auto;border-radius:12px;border:1px solid var(--line);display:block}
+  /* Glow hover effect for all images */
+img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 20px rgba(124, 58, 237, 0.6), 0 0 40px rgba(34, 211, 238, 0.4);
+}
+
   section{padding:8px 0 22px}
   footer{padding:24px 0;border-top:1px solid var(--line);color:var(--sub);text-align:center}
   .neon{position:relative} .neon:after{content:"";position:absolute;left:0;bottom:-6px;width:64px;height:2px;background:linear-gradient(90deg,var(--glow),transparent);border-radius:2px}
