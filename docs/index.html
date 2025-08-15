@@ -1,90 +1,89 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Neural Nubian Network — Mindstrong Universe</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #0f0f0f;
-      color: #fff;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-    }
-    header {
-      background: #111;
-      padding: 20px;
-      text-align: center;
-      border-bottom: 3px solid #0ff;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2em;
-      color: #0ff;
-    }
-    section {
-      padding: 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-    img {
-      width: 100%;
-      border-radius: 8px;
-      margin: 15px 0;
-      box-shadow: 0 0 10px rgba(0,255,255,0.4);
-    }
-    h2 {
-      border-left: 4px solid #0ff;
-      padding-left: 10px;
-      color: #0ff;
-    }
-    footer {
-      background: #111;
-      padding: 15px;
-      text-align: center;
-      border-top: 3px solid #0ff;
-      font-size: 0.9em;
-    }
-    a {
-      color: #0ff;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NNN — From the Block to the Blockchain</title>
+<meta name="description" content="Neural Nation Network (NNN) · Raspberry Pi nodes + Polygon · Powered by Mindstrong Universe (501c3)">
+<style>
+  :root{--bg:#0b0f19;--card:#0f172a;--line:#1f2a44;--ink:#e6edf3;--sub:#94a3b8;--glow:#22d3ee;--brand:#7c3aed}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:system-ui,Arial,sans-serif;background:var(--bg);color:var(--ink)}
+  a{color:var(--glow);text-decoration:none} a:hover{text-decoration:underline}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 16px}
+  header{position:sticky;top:0;background:linear-gradient(180deg,#0b0f19 70%,rgba(11,15,25,0));border-bottom:1px solid var(--line);z-index:10}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+  .brand{display:flex;gap:10px;align-items:center}
+  .logo{width:36px;height:36px;border-radius:10px;background:
+    radial-gradient(60% 60% at 40% 40%,var(--glow),transparent 60%),
+    linear-gradient(135deg,var(--brand),#1e293b);box-shadow:0 0 30px rgba(34,211,238,.35)}
+  .brand h1{font-size:18px;margin:0}
+  .btn{padding:8px 12px;border:1px solid var(--line);border-radius:10px}
+  .hero{padding:22px 0 8px}
+  .hero h2{font-size:28px;margin:10px 0 8px}
+  .tag{display:inline-block;font-size:12px;color:var(--sub);border:1px solid var(--line);border-radius:999px;padding:6px 10px}
+  .grid{display:grid;gap:16px}
+  @media(min-width:900px){.grid.two{grid-template-columns:1fr 1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;box-shadow:0 0 0 1px rgba(124,58,237,.06),0 10px 30px rgba(0,0,0,.25)}
+  img{width:100%;height:auto;border-radius:12px;border:1px solid var(--line);display:block}
+  section{padding:8px 0 22px}
+  footer{padding:24px 0;border-top:1px solid var(--line);color:var(--sub);text-align:center}
+  .neon{position:relative} .neon:after{content:"";position:absolute;left:0;bottom:-6px;width:64px;height:2px;background:linear-gradient(90deg,var(--glow),transparent);border-radius:2px}
+</style>
 </head>
 <body>
-
 <header>
-  <h1>Neural Nubian Network (NNN)</h1>
-  <p>Powered by Mindstrong Universe — Community, Blockchain, Education</p>
+  <div class="wrap nav">
+    <div class="brand">
+      <div class="logo" aria-hidden="true"></div>
+      <h1>NNN · Neural Nation Network</h1>
+    </div>
+    <a class="btn" href="https://github.com/PGator82/NeuralNation" target="_blank">GitHub Repo</a>
+  </div>
 </header>
 
-<section>
-  <h2>1. Street Hero Visual</h2>
-  <p>From the block to the blockchain — where our community meets Web3.</p>
-  <img src="images/nnn-street-hero.png" alt="NNN Street Hero"/>
+<main class="wrap">
+  <!-- HERO -->
+  <section class="hero">
+    <span class="tag">From the Block to the Blockchain — Mindstrong Universe 501(c)(3)</span>
+    <h2 class="neon">Own your block. Upgrade your future.</h2>
+    <div class="card">
+      <img src="./images/nnn-street-hero.png" alt="Urban community hero visual for NNN">
+    </div>
+  </section>
 
-  <h2>2. How NNN Works</h2>
-  <p>Visual breakdown of how the Neural Nubian Network runs on Polygon with Raspberry Pi nodes in the community.</p>
-  <img src="images/blockchain-flow.png" alt="Blockchain Flow Visual"/>
+  <!-- FLOW -->
+  <section>
+    <h3 class="neon">How it moves: Block → Pi → Polygon → Wallet → Rewards</h3>
+    <div class="card">
+      <img src="./images/blockchain-flow.png" alt="NNN flow diagram">
+    </div>
+  </section>
 
-  <h2>3. Citizen Setup Guide</h2>
-  <p>Follow this quick-start guide to get your Raspberry Pi node online, claim your rewards, and join the movement.</p>
-  <img src="images/citizen-guide.png" alt="Citizen Setup Guide"/>
+  <!-- FLYERS -->
+  <section>
+    <div class="grid two">
+      <div class="card">
+        <h3 class="neon">Citizen Setup Guide</h3>
+        <img src="./images/citizen-guide.png" alt="NNN Citizen Setup Guide">
+      </div>
+      <div class="card">
+        <h3 class="neon">Step Into the NNN</h3>
+        <img src="./images/nnn-setup-flyer.png" alt="Alternate setup flyer">
+      </div>
+    </div>
+  </section>
 
-  <h2>4. Mindstrong Universe Integration</h2>
-  <p>Mindstrong Universe connects education and blockchain — letting our 501(c)(3) programs reward learning and skill-building directly on the network.</p>
-  <img src="images/ecosystem-visual.png" alt="Ecosystem Visual"/>
-</section>
+  <!-- ECOSYSTEM -->
+  <section>
+    <h3 class="neon">Mindstrong × NNN (501(c)(3) Ecosystem)</h3>
+    <div class="card">
+      <img src="./images/ecosystem-visual.png" alt="Mindstrong Universe nonprofit ecosystem with NNN">
+    </div>
+  </section>
+</main>
 
-<footer>
-  &copy; 2025 Neural Nubian Network & Mindstrong Universe | 
-  <a href="https://github.com/PGator82/NeuralNation">GitHub Repo</a>
-</footer>
-
+<footer>© 2025 Mindstrong Universe · Neural Nation Network</footer>
 </body>
 </html>
+
