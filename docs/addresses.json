@@ -1,0 +1,12 @@
+{
+  "network": "amoy",
+  "lastUpdated": "2025-01-01T00:00:00.000Z",
+  "contracts": {
+    "NeuralNubianCoin": "0x0000000000000000000000000000000000000001",
+    "NeuralID": "0x0000000000000000000000000000000000000002",
+    "NeuralIDMinter": "",
+    "RoyaltyRouter": "",
+    "EducationRewards": "0x0000000000000000000000000000000000000003",
+    "UptimeRewards": "0x0000000000000000000000000000000000000004"
+  }
+}
