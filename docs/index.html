@@ -1,190 +1,23 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>NNN — From the Block to the Blockchain</title>
-<meta name="description" content="Neural Nation Network (NNN) · Raspberry Pi nodes + Polygon · Powered by Mindstrong Universe (501c3)">
-<style>
-  :root{--bg:#0b0f19;--card:#0f172a;--line:#1f2a44;--ink:#e6edf3;--sub:#94a3b8;--glow:#22d3ee;--brand:#7c3aed}
-  *{box-sizing:border-box;scroll-behavior:smooth}
-  body{margin:0;font-family:system-ui,Arial,sans-serif;background:var(--bg);color:var(--ink)}
-  a{color:var(--glow);text-decoration:none}
-  a:hover{text-decoration:underline}
-  .wrap{max-width:1200px;margin:0 auto;padding:0 16px}
-  /* Glass header */
-  header{
-    position:sticky; top:0; z-index:10;
-    background:linear-gradient(180deg, rgba(11,15,25,0.75) 70%, rgba(11,15,25,0));
-    border-bottom:1px solid var(--line);
-    backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
-    transition: background .35s ease, box-shadow .35s ease, border-color .35s ease;
-  }
-  header.scrolled{
-    background: rgba(11,15,25,0.92);
-    border-bottom-color: rgba(124,58,237,.35);
-    box-shadow: 0 6px 24px rgba(0,0,0,.35),
-                0 0 28px rgba(34,211,238,.15),
-                0 0 12px rgba(124,58,237,.15);
-  }
-  header .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
-  header.scrolled .nav{padding:10px 0}
-  .brand{display:flex;gap:10px;align-items:center}
-  .logo{width:36px;height:36px;border-radius:10px;background:
-    radial-gradient(60% 60% at 40% 40%,var(--glow),transparent 60%),
-    linear-gradient(135deg,var(--brand),#1e293b);box-shadow:0 0 30px rgba(34,211,238,.35)}
-  .brand h1{font-size:18px;margin:0}
-  nav a{margin-left:18px;padding-bottom:3px;border-bottom:2px solid transparent;transition:border-color .3s}
-  nav a.active{border-color:var(--glow)}
-  .btn{padding:10px 14px;border:1px solid var(--line);border-radius:10px;display:inline-block}
-  .btn.primary{border-color:transparent;background:linear-gradient(90deg,var(--brand),var(--glow));color:#0b0f19;font-weight:600}
-  .btn.row{margin-right:10px}
-  .hero{padding:22px 0 8px}
-  .hero h2{font-size:28px;margin:10px 0 8px}
-  .tag{display:inline-block;font-size:12px;color:var(--sub);border:1px solid var(--line);border-radius:999px;padding:6px 10px}
-  .grid{display:grid;gap:16px}
-  @media(min-width:900px){.grid.two{grid-template-columns:1fr 1fr}}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;box-shadow:0 0 0 1px rgba(124,58,237,.06),0 10px 30px rgba(0,0,0,.25)}
-  section{padding:8px 0 22px}
-  footer{padding:24px 0;border-top:1px solid var(--line);color:var(--sub);text-align:center}
-  .neon{position:relative}
-  .neon:after{content:"";position:absolute;left:0;bottom:-6px;width:64px;height:2px;background:linear-gradient(90deg,var(--glow),transparent);border-radius:2px}
-  /* Images + hover glow */
-  img{display:block;max-width:100%;height:auto;margin:0 auto;border-radius:12px;border:1px solid var(--line);transition:transform .3s ease,box-shadow .3s ease}
-  .card img{max-width:85%}
-  img:hover{transform:scale(1.03);box-shadow:0 0 20px rgba(124,58,237,.6),0 0 40px rgba(34,211,238,.4)}
-  /* Reveal on scroll */
-  .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
-  .reveal.show{opacity:1;transform:none}
-  /* CTA row */
-  .cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
-  .input{padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:#0f172a;color:#e6edf3;outline:none}
-</style>
+  <meta charset="UTF-8">
+  <title>Neural Nation – Home</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-  <div class="wrap nav">
-    <div class="brand">
-      <div class="logo" aria-hidden="true"></div>
-      <h1>NNN · Neural Nation Network</h1>
-    </div>
-    <nav>
-      <a href="#hero">Home</a>
-      <a href="#flow">Flow</a>
-      <a href="#flyers">Flyers</a>
-      <a href="#ecosystem">Ecosystem</a>
-      <a href="./roadmap.html">Roadmap</a>
-      <a href="https://github.com/PGator82/NeuralNation" target="_blank" class="btn row">GitHub</a>
-    </nav>
-  </div>
-</header>
-
-<main class="wrap">
-  <!-- HERO -->
-  <section id="hero" class="hero">
-    <span class="tag">From the Block to the Blockchain — Mindstrong Universe 501(c)(3)</span>
-    <h2 class="neon">Own your block. Upgrade your future.</h2>
-    <div class="card reveal">
-      <picture>
-        <source srcset="./images/nnn-street-hero.webp" type="image/webp">
-        <source srcset="./images/nnn-street-hero.png" type="image/png">
-        <img src="./images/nnn-street-hero.png" loading="eager" width="1200" height="675" alt="Urban community hero visual for NNN">
-      </picture>
-      <div class="cta">
-        <a class="btn primary" id="join" href="https://forms.gle/your-google-form-id" target="_blank">Join the Network</a>
-        <a class="btn" href="./NNN_Citizen_Setup_Guide.pdf" target="_blank">Download Setup PDF</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- FLOW -->
-  <section id="flow">
-    <h3 class="neon">How it moves: Block → Pi → Polygon → Wallet → Rewards</h3>
-    <div class="card reveal">
-      <img src="./images/blockchain-flow.png" loading="lazy" width="1200" height="675" alt="NNN flow diagram">
-    </div>
-    <!-- ACTIVE NODES -->
-    <div id="node-status" class="card reveal" style="margin-top:16px;">
-      <h3 class="neon">Active Nodes</h3>
-      <ul id="nodes" style="color:var(--sub);margin:8px 0 0;padding-left:18px"></ul>
-    </div>
-  </section>
-
-  <!-- FLYERS -->
-  <section id="flyers">
-    <div class="grid two">
-      <div class="card reveal">
-        <h3 class="neon">Citizen Setup Guide</h3>
-        <img src="./images/citizen-guide.png" loading="lazy" width="1000" height="1414" alt="NNN Citizen Setup Guide">
-        <div class="cta">
-          <a class="btn" href="./NNN_Citizen_Setup_Guide.pdf" target="_blank">Download PDF</a>
-        </div>
-      </div>
-      <div class="card reveal">
-        <h3 class="neon">Step Into the NNN</h3>
-        <img src="./images/nnn-setup-flyer.png" loading="lazy" width="1000" height="1414" alt="Alternate setup flyer">
-        <div class="cta">
-          <a class="btn primary" href="https://forms.gle/your-google-form-id" target="_blank">Sign Up</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ECOSYSTEM -->
-  <section id="ecosystem">
-    <h3 class="neon">Mindstrong × NNN (501(c)(3) Ecosystem)</h3>
-    <div class="card reveal">
-      <img src="./images/ecosystem-visual.png" loading="lazy" width="1200" height="675" alt="Mindstrong Universe nonprofit ecosystem with NNN">
-    </div>
-  </section>
-</main>
-
-<footer>© 2025 Mindstrong Universe · Neural Nation Network</footer>
-
-<script>
-  // Scroll reveal
-  const observer = new IntersectionObserver((entries)=> {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('show'); });
-  }, {threshold: 0.15});
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-  // Nav highlight
-  const sections = document.querySelectorAll("section");
-  const navLinks = document.querySelectorAll("nav a[href^='#']");
-  function highlight(){
-    let current = "";
-    const top = window.scrollY;
-    sections.forEach(sec => {
-      const offset = sec.offsetTop - 100;
-      const height = sec.offsetHeight;
-      if (top >= offset && top < offset + height) current = sec.id;
-    });
-    navLinks.forEach(a => {
-      a.classList.toggle("active", a.getAttribute("href") === `#${current}`);
-    });
-  }
-  window.addEventListener("scroll", highlight); highlight();
-
-  // Glass header scroll state
-  const hdr = document.querySelector('header');
-  const setHeaderState = () => { if (window.scrollY > 40) hdr.classList.add('scrolled'); else hdr.classList.remove('scrolled'); };
-  setHeaderState(); window.addEventListener('scroll', setHeaderState);
-
-  // Load Active Nodes (optional file)
-  fetch('./nodes.json')
-    .then(r => r.ok ? r.json() : [])
-    .then(list => {
-      const ul = document.getElementById('nodes');
-      if (!Array.isArray(list) || !ul) return;
-      ul.innerHTML = '';
-      list.forEach(n => {
-         const li = document.createElement('li');
-         const statusDot = n.status === 'online' ? '🟢' : '🔴';
-         li.textContent = `${statusDot} ${n.name} — ${n.status}`;
-         ul.appendChild(li);
-      });
-    })
-    .catch(()=>{/* silent if nodes.json missing */});
-</script>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="setup.html">Get Started</a>
+    <a href="roadmap.html">Roadmap</a>
+  </nav>
+  <header>
+    <h1>Welcome to Neural Nation</h1>
+  </header>
+  <main>
+    <p>From the block to the blockchain – building the Neural Nubian Network.</p>
+    <img src="images/nnn-street-hero.png" alt="NNN Street Hero" loading="lazy">
+  </main>
 </body>
 </html>
