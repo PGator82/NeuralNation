@@ -15,9 +15,96 @@
   <header>
     <h1>Welcome to Neural Nation</h1>
   </header>
+
+  <!-- DEPLOYED CONTRACTS -->
+<section id="contracts">
+  <h3 class="neon">Deployed Contracts (Polygon Amoy)</h3>
+  <div class="card reveal">
+    <div id="contracts-meta" style="color:var(--sub);font-size:.95rem;margin-bottom:10px;">
+      Loading… 
+    </div>
+    <div style="overflow:auto">
+      <table id="contracts-table" style="width:100%;border-collapse:collapse">
+        <thead>
+          <tr>
+            <th style="text-align:left;border-bottom:1px solid var(--line);padding:8px;">Contract</th>
+            <th style="text-align:left;border-bottom:1px solid var(--line);padding:8px;">Address</th>
+          </tr>
+        </thead>
+        <tbody id="contracts-body"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
   <main>
     <p>From the block to the blockchain – building the Neural Nubian Network.</p>
     <img src="images/nnn-street-hero.png" alt="NNN Street Hero" loading="lazy">
   </main>
+   <script>
+(async function renderContracts(){
+  const metaEl = document.getElementById('contracts-meta');
+  const tbody = document.getElementById('contracts-body');
+  if (!metaEl || !tbody) return;
+
+  // Fetch addresses.json
+  let data;
+  try {
+    const res = await fetch('./addresses.json', { cache: 'no-store' });
+    if (!res.ok) throw new Error('not found');
+    data = await res.json();
+  } catch(e) {
+    metaEl.textContent = 'No addresses.json found yet. Deploy contracts or add the file to show on-chain info.';
+    return;
+  }
+
+  const net = (data.network || 'amoy').toLowerCase();
+  const scanBase = net === 'amoy'
+    ? 'https://amoy.polygonscan.com/address/'
+    : 'https://polygonscan.com/address/';
+
+  const entries = Object.entries(data.contracts || {}).filter(([_, addr]) => addr && addr.length > 0);
+
+  // Meta line
+  const updated = data.lastUpdated ? new Date(data.lastUpdated).toLocaleString() : 'unknown';
+  metaEl.innerHTML = `Network: <b>${net}</b> · Last updated: <b>${updated}</b> · Contracts: <b>${entries.length}</b>`;
+
+  // Rows
+  tbody.innerHTML = '';
+  if (entries.length === 0) {
+    const tr = document.createElement('tr');
+    const td = document.createElement('td');
+    td.colSpan = 2;
+    td.style.padding = '10px';
+    td.style.color = 'var(--sub)';
+    td.textContent = 'No contract addresses yet.';
+    tr.appendChild(td);
+    tbody.appendChild(tr);
+    return;
+  }
+
+  for (const [name, addr] of entries) {
+    const tr = document.createElement('tr');
+
+    const tdName = document.createElement('td');
+    tdName.style.padding = '8px';
+    tdName.textContent = name;
+
+    const tdAddr = document.createElement('td');
+    tdAddr.style.padding = '8px';
+    const a = document.createElement('a');
+    a.href = scanBase + addr;
+    a.target = '_blank';
+    a.rel = 'noopener';
+    a.textContent = addr.slice(0, 6) + '…' + addr.slice(-4);
+    tdAddr.appendChild(a);
+
+    tr.appendChild(tdName);
+    tr.appendChild(tdAddr);
+    tbody.appendChild(tr);
+  }
+})();
+</script>
+
 </body>
 </html>
