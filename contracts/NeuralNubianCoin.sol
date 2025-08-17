@@ -3,17 +3,18 @@ pragma solidity ^0.8.24;
 
 import {ERC20} from "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import {ERC20Burnable} from "@openzeppelin/contracts/token/ERC20/extensions/ERC20Burnable.sol";
-import {Pausable} from "@openzeppelin/contracts/utils/Pausable.sol";
+import {Pausable} from "@openzeppelin/contracts/utils/Pausable.sol";  // <- keep utils
 import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";
 
-/// @title Neural Nubian Coin (NNC) — capped, burnable, pausable
 contract NeuralNubianCoin is ERC20, ERC20Burnable, Pausable, Ownable {
     uint256 public immutable cap;
 
     constructor(address treasury, uint256 initialSupply, uint256 _cap)
         ERC20("Neural Nubian Coin", "NNC")
-        Ownable(msg.sender)
+        Ownable(treasury)   // set initial owner (OZ v5 requires this)
     {
+        require(treasury != address(0), "treasury=0");
+        require(_cap > 0, "cap=0");
         require(initialSupply <= _cap, "initial > cap");
         cap = _cap;
         _mint(treasury, initialSupply);
@@ -27,9 +28,7 @@ contract NeuralNubianCoin is ERC20, ERC20Burnable, Pausable, Ownable {
     function pause() external onlyOwner { _pause(); }
     function unpause() external onlyOwner { _unpause(); }
 
-    function _update(address from, address to, uint256 value)
-        internal override(ERC20)
-    {
+    function _update(address from, address to, uint256 value) internal override(ERC20) {
         require(!paused(), "paused");
         super._update(from, to, value);
     }
